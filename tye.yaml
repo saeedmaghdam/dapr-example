@@ -1,0 +1,16 @@
+name: dapr-example
+extensions:
+
+  # Configuration for dapr goes here.
+- name: dapr 
+
+# Services to run go here.
+services:
+  
+  # The name will be used as the app-id. For a .NET project, Tye only needs the path to the project file.
+- name: dapr-example-backend
+  project: dapr-example-backend/dapr-example-backend.csproj
+- name: dapr-example-frontend
+  project: dapr-example-frontend/dapr-example-frontend.csproj
+
+  # Containers you want to run need an image name and set of ports to expose.
