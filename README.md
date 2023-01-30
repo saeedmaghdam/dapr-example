@@ -32,5 +32,27 @@ Add a new connection in Another Redis Desktop Manager, set host to localhost, po
 ## Debugging
 In order to debug the services, simply open the project in visual studio and attach the running process using Debug menu in visual studio.
 
+## Deploying to K8S
+
+**Deploy Dapr to K8S**
+```dapr init -k```
+
+### dapr-example (cli)
+
+**Deploy Redis**
+```helm install bitnami/redis redis -n infra```
+
+**Deploy statestore Component**
+```kubectl apply -f dapr-component-redis.yaml```
+
+**Deploy Deployment**
+```kubectl apply -f dapr-example-deployment.yaml```
+
 ## Resource
 [Getting Started with Dapr for .Net Developers](https://learn.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/getting-started)
+
+[Running a Dapr Application on Kubernetes](https://sookocheff.com/post/dapr/running-a-dapr-application-on-kubernetes/)
+
+[Redis Component](https://docs.dapr.io/reference/components-reference/supported-state-stores/setup-redis/)
+
+[Dapr arguments and annotations for daprd, CLI, and Kubernetes](https://docs.dapr.io/reference/arguments-annotations-overview/)
