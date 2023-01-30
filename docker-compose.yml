@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   dapr-example-frontend:
-    image: ${DOCKER_REGISTRY-}daprexamplefrontend
+    image: saeedmaghdam/poc-dapr-example-frontend:1.1
     build:
       context: .
       dockerfile: dapr-example-frontend/Dockerfile
@@ -17,7 +17,7 @@ services:
     network_mode: "service:dapr-example-frontend"
 
   dapr-example-backend:
-    image: ${DOCKER_REGISTRY-}daprexamplebackend
+    image: saeedmaghdam/poc-dapr-example-backend:1.1
     build:
       context: .
       dockerfile: dapr-example-backend/Dockerfile

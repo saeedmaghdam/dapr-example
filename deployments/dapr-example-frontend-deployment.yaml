@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dapr-example-frontend-deployment
+  namespace: poc-dapr
+  labels:
+    app: dapr-example-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dapr-example-frontend
+  template:
+    metadata:
+      labels:
+        app: dapr-example-frontend
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "dapr-example-frontend"
+        dapr.io/app-port: "80"
+        dapr.io/enable-api-logging: "true"
+    spec:
+      containers:
+      - name: dapr-example-frontend
+        image: saeedmaghdam/poc-dapr-example-frontend:1.1
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+        env:
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Deployment"
+        imagePullPolicy: Always
