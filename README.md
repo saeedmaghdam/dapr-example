@@ -48,6 +48,14 @@ In order to debug the services, simply open the project in visual studio and att
 **Deploy Deployment**
 ```kubectl apply -f dapr-example-deployment.yaml```
 
+### dapr-example (weather)
+
+**Deploy Backend Deployment**
+```kubectl apply -f dapr-example-backend-deployment.yaml```
+
+**Deploy Frontend Deployment**
+```kubectl apply -f dapr-example-frontend-deployment.yaml```
+
 ## Resource
 [Getting Started with Dapr for .Net Developers](https://learn.microsoft.com/en-us/dotnet/architecture/dapr-for-net-developers/getting-started)
 
