@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: dapr-example-frontend
-        image: saeedmaghdam/poc-dapr-example-frontend:1.1
+        image: saeedmaghdam/poc-dapr-example-frontend:1.2
         resources:
           requests:
             memory: "64Mi"
@@ -32,6 +32,7 @@ spec:
             cpu: "500m"
         ports:
           - containerPort: 80
+          - containerPort: 443
         env:
           - name: ASPNETCORE_ENVIRONMENT
             value: "Deployment"

@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   dapr-example-frontend:
-    image: saeedmaghdam/poc-dapr-example-frontend:1.1
+    image: saeedmaghdam/poc-dapr-example-frontend:1.2
     build:
       context: .
       dockerfile: dapr-example-frontend/Dockerfile
